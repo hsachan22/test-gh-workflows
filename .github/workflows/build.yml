@@ -16,7 +16,10 @@ jobs:
       packages: write
     
     steps:
-      - name: log passed env's
-        uses: actions/hello-world-javascript-action@main
-        with:
-          who-to-greet: ${{ inputs.env_file }}
+      - name: create file in action
+        run: |
+          echo ${{ inputs.env_file }} >> .env
+
+      - name: log env file
+        run: |
+          cat .env | echo
