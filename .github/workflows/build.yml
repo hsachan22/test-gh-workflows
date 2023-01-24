@@ -23,6 +23,11 @@ jobs:
         run: |
           echo "${{ inputs.env_file }}" >> .env
 
+      - name: log input env vars
+        uses: ./actions/env-logger
+        with:
+          env_file: "${{ inputs.env_file }}"
+
       - name: log env file
         run: |
           cat .env
