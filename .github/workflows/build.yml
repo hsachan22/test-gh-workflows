@@ -1,0 +1,27 @@
+name: Test ENV passing
+on:
+  workflow_call:
+    outputs:
+      version:
+        description: "Application Version"
+        value: ${{ jobs.test-env.outputs.version }}
+    inputs:
+      env_file:
+        description: "All env variables"
+        required: false
+        type: string
+        default: ""
+
+jobs:
+  test-env:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      version: "1.0.0"
+    
+    steps:
+      uses: actions/hello-world-javascript-action@main
+      with:
+        who-to-greet: ${{ inputs.env_file }}

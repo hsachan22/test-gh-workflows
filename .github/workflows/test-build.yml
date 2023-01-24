@@ -1,0 +1,13 @@
+name: TestCase 1 - Passing ENV
+on:
+  push: 
+    branches:
+      - main
+  
+jobs:
+  test-passed-env:
+    uses: ./.github/workflows/build.yml
+    with:
+      env_file: |
+        test=1
+        hello=world
