@@ -1,10 +1,6 @@
 name: Test ENV passing
 on:
   workflow_call:
-    outputs:
-      version:
-        description: "Application Version"
-        value: ${{ jobs.test-env.outputs.version }}
     inputs:
       env_file:
         description: "All env variables"
@@ -18,8 +14,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-    outputs:
-      version: "1.0.0"
     
     steps:
       - name: log passed env's
