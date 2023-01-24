@@ -22,6 +22,7 @@ jobs:
       version: "1.0.0"
     
     steps:
-      uses: actions/hello-world-javascript-action@main
-      with:
-        who-to-greet: ${{ inputs.env_file }}
+      - name: log passed env's
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: ${{ inputs.env_file }}
