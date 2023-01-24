@@ -1,0 +1,10 @@
+name: 'ENV logger'
+description: 'logs the env file'
+inputs:
+  env_file:
+    description: 'Env variables as multiline string'
+    required: true
+    default: ''
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
