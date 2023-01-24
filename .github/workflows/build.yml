@@ -16,6 +16,9 @@ jobs:
       packages: write
     
     steps:
+      - name: Checkout repository (clone the repo for use)
+        uses: actions/checkout@v3
+
       - name: create file in action
         run: |
           echo "${{ inputs.env_file }}" >> .env
@@ -23,3 +26,6 @@ jobs:
       - name: log env file
         run: |
           cat .env
+
+      - name: list files
+        run: ls
