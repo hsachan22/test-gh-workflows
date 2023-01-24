@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: create file in action
         run: |
-          echo ${{ inputs.env_file }} >> .env
+          echo "${{ inputs.env_file }}" >> .env
 
       - name: log env file
         run: |
-          cat .env | echo
+          cat .env
