@@ -28,4 +28,4 @@ jobs:
           cat .env
 
       - name: list files
-        run: ls
+        run: ls -a
