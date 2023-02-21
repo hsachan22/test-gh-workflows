@@ -13,12 +13,6 @@ jobs:
     with:
       env_file: |
         {
-          "test_env_1": "
-            TEST1='VAL1'
-            TESTA='VALA'
-          ",
-          "test_env_2": "
-            TEST2='VAL2'
-            TESTB='VALB'
-          ",
+          "test_env_1": "TEST1='VAL1' TESTA='VALA'",
+          "test_env_2": "TEST2='VAL2' TESTB='VALB'",
         }
