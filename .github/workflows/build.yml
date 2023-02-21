@@ -21,7 +21,11 @@ jobs:
 
       - name: test-json
       - run: |
-          echo "${{ fromJson(inputs.env_file).test_env_1 }}"
+          json=${{ inputs.env_file }}
+          json="${json//'%'/'%25'}"
+          json="${json//$'\n'/'%0A'}"
+          json="${json//$'\r'/'%0D'}"
+          echo json
 
       - name: create file in action
         run: |
