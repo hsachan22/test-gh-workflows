@@ -22,7 +22,7 @@ jobs:
       - name: test-json
         run: |
           json="${{ fromJson(inputs.env_file).test_env_1 }}"
-          echo $json
+          echo $json | tr " " "\n"
 
       - name: create file in action
         run: |
