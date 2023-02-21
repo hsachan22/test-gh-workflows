@@ -21,7 +21,7 @@ jobs:
 
       - name: test-json
         run: |
-          json=${{ fromJson(inputs.env_file) }}
+          json=${{ fromJson(inputs.env_file).test_env_1 }}
           echo $json
 
       - name: create file in action
