@@ -12,5 +12,13 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       env_file: |
-        test=1
-        hello=world
+        {
+          "test_env_1": "
+            TEST1='VAL1'
+            TESTA='VALA'
+          ",
+          "test_env_2": "
+            TEST2='VAL2'
+            TESTB='VALB'
+          ",
+        }
