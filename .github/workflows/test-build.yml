@@ -12,9 +12,13 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       env_file: |
-        test_env_1: |
-          KEY1: 'VAL1'
-          KEY2: 'VAL2'
-        test_env_2: |
-          KEY3: 'VAL3'
-          KEY4: 'VAL4'
+        {
+          "test_env_1": "
+            TEST1='VAL1'
+            TESTA='VALA'
+          ",
+          "test_env_2": "
+            TEST2='VAL2'
+            TESTB='VALB'
+          ",
+        }
