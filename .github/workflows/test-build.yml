@@ -15,7 +15,8 @@ jobs:
         {
           "test_env_1": "
             TEST1='VAL1'
-            TESTA='VALA'
+            TESTA='VAL_A
+            VAL_C'
           ",
           "test_env_2": "
             TEST2='VAL2'
