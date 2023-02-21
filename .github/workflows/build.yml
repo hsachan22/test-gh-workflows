@@ -19,10 +19,10 @@ jobs:
       - name: Checkout repository (clone the repo for use)
         uses: actions/checkout@v3
 
-      - name: test-json
-        run: |
-          json="${{ fromJson(inputs.env_file).test_env_1 }}"
-          echo $json
+      - name: Set foobar to cool
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.test_env_1' "${{ inputs.env_file }}""
 
       - name: create file in action
         run: |
