@@ -19,14 +19,10 @@ jobs:
       - name: Checkout repository (clone the repo for use)
         uses: actions/checkout@v3
 
-      - name: test-json
-        run: |
-          json="${{ fromJson(inputs.env_file).test_env_1 }}"
-          echo $json | tr " " "\n"
-
       - name: create file in action
         run: |
-          echo "${{ inputs.env_file }}" >> .env
+          json="${{ fromJson(inputs.env_file).test_env_1 }}"
+          echo $json | tr " " "\n" >> .env
 
       - name: log input env vars
         uses: ./actions/env-logger
