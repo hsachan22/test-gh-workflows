@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: test-json
-      - run: |
+        run: |
           json=${{ inputs.env_file }}
           json="${json//'%'/'%25'}"
           json="${json//$'\n'/'%0A'}"
